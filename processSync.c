@@ -74,6 +74,7 @@ int main (int argc, char*argv[])
          shmPtr[0]= shmPtr[1];
          shmPtr[1] = temp;
 
+         //for testing
          printf ("child: %li values: %li\t%li\n",i, shmPtr[0], shmPtr[1]);
 
       }
@@ -106,7 +107,7 @@ int main (int argc, char*argv[])
          printf ("parent: %li values: %li\t%li\n",i, shmPtr[0], shmPtr[1]);
 
       }
-      
+
       //unlocks the semaphore once done
       buf.sem_op = 1;
       semop(semId, &buf, 1);
